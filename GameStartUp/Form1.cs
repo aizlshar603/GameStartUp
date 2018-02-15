@@ -49,11 +49,30 @@ namespace GameStartUp
             this.BackColor = Color.Black;
             PlayGame.Visible = false;
 
-            //play sound
+            //play sound (couldn't get sound to download)
 
-            SoundPlayer player = new SoundPlayer(Properties.Resources.alert);
-            player.Play();
+            //SoundPlayer player = new SoundPlayer(Properties.Resources.alert);
+            //player.Play();
 
+            //logo background
+            Graphics g = this.CreateGraphics();
+            g.Clear(Color.Green);
+            Pen drawPen = new Pen(Color.Red, 10);
+            SolidBrush drawBrush = new SolidBrush(Color.Red);
+            g.DrawEllipse(drawPen, 30, 25, 200, 100);
+            g.FillEllipse(drawBrush, 30, 25, 200, 100);
+
+            //C of the logo
+            drawPen.Color = Color.White;
+            drawBrush.Color = Color.White;
+            g.DrawArc(drawPen, 70, 40, 65, 65, 30, 300);
+
+            //Rams writing
+            Font drawFont = new Font("Arial", 20, FontStyle.Bold);
+            drawBrush.Color = Color.White;
+            g.DrawString("Rams", drawFont, drawBrush, 100, 55);
+
+            
 
 
 
